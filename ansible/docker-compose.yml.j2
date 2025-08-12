@@ -1,0 +1,23 @@
+services:
+  frontend:
+    image: kalukwo/nivela-ui:latest
+    ports:
+      - "8081:80"
+    environment:
+      - API_BASE_URL=http://localhost:6000/api
+    restart: unless-stopped
+
+  backend:
+    image: kalukwo/nivela-backend:latest
+    ports:
+      - "6000:8080"
+    environment:
+      - ConnectionStrings__DefaultConnection=Host=34.74.244.105;Database=NivelaDb;Username=postgres;Password=KejaHUnT@2217;Port=5432;
+    depends_on:
+     - migrations-backend
+
+  migrations-backend:
+    image: kalukwo/nivela-backend:migrations
+    environment:
+      - ConnectionStrings__DefaultConnection=Host=34.74.244.105;Database=NivelaDb;Username=postgres;Password=KejaHUnT@2217;Port=5432;
+    restart: "no"
