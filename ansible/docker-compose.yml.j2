@@ -33,7 +33,7 @@ services:
     ports:
       - "80:80"
     environment:
-      - API_BASE_URL=http://35.211.95.191:5000/api
+      - API_BASE_URL=https://nivela.duckdns.org/api
     restart: unless-stopped
     depends_on:
       - backend
