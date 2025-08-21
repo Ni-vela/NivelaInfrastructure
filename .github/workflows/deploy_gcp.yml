@@ -28,4 +28,6 @@ jobs:
         ansible-playbook ansible/deployment.yml \
           -i ansible/inventory.yml \
           -e "server_ip=${{ secrets.GCP_IP }}" \
-          -e "ssh_private_key_file=~/.ssh/kejahunt_key"
+          -e "ssh_private_key_file=~/.ssh/kejahunt_key" \
+          -e "google_client_id=${{ secrets.GOOGLE_CLIENT_ID }}" \
+          -e "google_client_secret=${{ secrets.GOOGLE_CLIENT_SECRET }}"

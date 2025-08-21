@@ -46,9 +46,11 @@ services:
     ports:
       - "5000:8080"
     environment:
-      - ConnectionStrings__DefaultConnection=Host=34.74.244.105;Database=NivelaDb;Username=postgres;Password=KejaHUnT@2217;Port=5432;
+      - ConnectionStrings__DefaultConnection=Host=35.196.42.252;Database=NivelaDb;Username=postgres;Password=Nivela@2217;Port=5432;
       - ConnectionStrings__RedisConnection=redis:6379
       - ASPNETCORE_ENVIRONMENT=Production
+      - Authentication__Google__ClientId={{ google_client_id }}
+      - Authentication__Google__ClientSecret={{ google_client_secret }}
     depends_on:
       - migrations-backend
       - redis
