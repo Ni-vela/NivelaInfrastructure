@@ -51,8 +51,6 @@ services:
       - ASPNETCORE_ENVIRONMENT=Production
       - Authentication__Google__ClientId={{ google_client_id }}
       - Authentication__Google__ClientSecret={{ google_client_secret }}
-      - ASPNETCORE_URLS=https://+:8080
-      - ASPNETCORE_HTTPS_PORT=8080
     depends_on:
       - migrations-backend
       - redis
