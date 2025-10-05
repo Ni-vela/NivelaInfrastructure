@@ -49,7 +49,7 @@ services:
       - data-protection-keys:/app/keys   
     environment:
       - ConnectionStrings__DefaultConnection=Host=34.41.232.227;Database=NivelaDb;Username=postgres;Password=KejaHUnT@2217;Port=5432;
-      - ConnectionStrings__RedisConnection=redis:6379
+      - ConnectionStrings__Redis=redis:6379
       - ASPNETCORE_ENVIRONMENT=Production
       - Authentication__Google__ClientId={{ google_client_id }}
       - Authentication__Google__ClientSecret={{ google_client_secret }}
