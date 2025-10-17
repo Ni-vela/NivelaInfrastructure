@@ -48,7 +48,7 @@ services:
     volumes:
       - data-protection-keys:/app/keys   
     environment:
-      - ConnectionStrings__DefaultConnection=Host=34.41.232.227;Database=NivelaDb;Username=postgres;Password=KejaHUnT@2217;Port=5432;
+      - ConnectionStrings__DefaultConnection=Host=34.23.121.205;Database=NivelaDb;Username=postgres;Password=KejaHUnT@2217;Port=5432;
       - ConnectionStrings__Redis=redis:6379
       - ASPNETCORE_ENVIRONMENT=Production
       - Authentication__Google__ClientId={{ google_client_id }}
@@ -68,7 +68,7 @@ services:
     image: kalukwo/nivela-backend:migrations
     container_name: nivela-migrations
     environment:
-      - ConnectionStrings__DefaultConnection=Host=34.41.232.227;Database=NivelaDb;Username=postgres;Password=KejaHUnT@2217;Port=5432;
+      - ConnectionStrings__DefaultConnection=Host=34.23.121.205;Database=NivelaDb;Username=postgres;Password=KejaHUnT@2217;Port=5432;
     restart: "no"
     depends_on:
       - redis
