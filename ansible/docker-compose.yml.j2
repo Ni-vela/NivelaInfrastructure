@@ -33,7 +33,7 @@ services:
     ports:
       - "80:80"
     environment:
-      - API_BASE_URL=https://nivela.duckdns.org/api
+      - API_BASE_URL=https://nivela.co.ke/api
     restart: unless-stopped
     depends_on:
       - backend
@@ -53,10 +53,10 @@ services:
       - ASPNETCORE_ENVIRONMENT=Production
       - Authentication__Google__ClientId={{ google_client_id }}
       - Authentication__Google__ClientSecret={{ google_client_secret }}
-      - Frontend__BaseUrl=https://nivela.duckdns.org
+      - Frontend__BaseUrl=https://nivela.co.ke
       - Jwt__Key=werthggkarokgusnbcvbnmjgffchjgxv
-      - Jwt__Issuer=https://nivela.duckdns.org
-      - Jwt__Audience=https://nivela.duckdns.org
+      - Jwt__Issuer=https://nivela.co.ke
+      - Jwt__Audience=https://nivela.co.ke
     depends_on:
       - migrations-backend
       - redis
